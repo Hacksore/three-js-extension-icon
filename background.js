@@ -50,19 +50,25 @@
 
 // test skinview
 const canvas = document.createElement("canvas");
+
+const skinIcon = chrome.runtime.getURL("hacksore.png");
+console.log("icon", skinIcon);
 const skinViewer = new skinview3d.SkinViewer({
   canvas,
   width: 16,
   height: 16,
-  skin: "hacksore.png"
+  skin: skinIcon
 });
 
 // render loop
 const renderFavicon = () => {
-  const iconUrl = canvas.toDataURL("image/png");
+  const iconUrl = skinViewer.canvas.toDataURL("image/png");
+  console.log(iconUrl);
   chrome.browserAction.setIcon({
     path: {
       "16": iconUrl
     }
   });
 };
+
+setInterval(() => renderFavicon(), 1000);
