@@ -1,6 +1,7 @@
+const skinview3d = require("skinview3d");
 const canvas = document.createElement("canvas");
 
-const skinIcon = chrome.runtime.getURL("hacksore.png");
+const skinIcon = chrome.runtime.getURL("skin.png");
 const skinViewer = new skinview3d.SkinViewer({
   canvas,
   width: 16,
@@ -9,22 +10,20 @@ const skinViewer = new skinview3d.SkinViewer({
   preserveDrawingBuffer: true,
 });
 
-skinViewer.animations.add(skinview3d.RotatingAnimation);
-skinViewer.animations.add(skinview3d.WalkingAnimation);
+const rotation = skinViewer.animations.add(skinview3d.RotatingAnimation);
+rotation.speed = 2.75;
 
 // render loop
 const renderFavicon = () => {
   const iconUrl = skinViewer.canvas.toDataURL("image/png");
 
   // move the canvas rotation
-  skinViewer.camera.rotation.x = -0.620;
-  skinViewer.camera.rotation.y = 0.534;
-  skinViewer.camera.rotation.z = 0.348;
+  skinViewer.camera.rotation.x = -0.220;  
 
   // mvoe the camera position
-  skinViewer.camera.position.x = 6.5;
-  skinViewer.camera.position.y = 10;
-  skinViewer.camera.position.z = 12;
+  skinViewer.camera.position.x = 0;
+  skinViewer.camera.position.y = 14; // up / down
+  skinViewer.camera.position.z = 12;  
 
   // draw
   skinViewer.draw();

@@ -1,0 +1,21 @@
+{
+  "name": "three-js-chrome-extension-icon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "background.js",
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.5",
+    "rollup-plugin-chrome-extension": "^3.6.4",
+    "rollup-plugin-copy": "^3.4.0"
+  },
+  "dependencies": {
+    "skinview3d": "^2.1.0"
+  }
+}

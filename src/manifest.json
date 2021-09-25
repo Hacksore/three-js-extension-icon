@@ -2,11 +2,11 @@
   "name": "three-js-demo",
   "version": "1.0",
   "manifest_version": 2,
-  "background": { "scripts": ["three.js", "skinview3d.bundle.js", "background.js"] },
+  "background": { "scripts": ["background/index.js"] },
   "icons": { "16": "./icon.png" },
   "description": "Render a threejs scene in the icon, cause why not",
   "browser_action": {
     "default_icon": "./icon.png",
-    "default_title": "Three.js Demo"
+    "default_title": "Three.js Minecraft extension"
   }
 }
